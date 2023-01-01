@@ -1,0 +1,34 @@
+
+  <head>
+
+                <script>
+                        function loadDoc() {
+                                var command= document.getElementById("cmd").value;
+
+  const xhttp = new XMLHttpRequest();
+
+
+  xhttp.onreadystatechange = function()
+         {
+
+                document.getElementById("div1").innerHTML= this.responseText;
+         }
+
+     //chanhe the ip address to latest one or keep it as the localhost(no need of hosting )
+  xhttp.open("GET", "http://13.235.69.191:46467/prompt?cmd="+command , true);
+  xhttp.send();
+}
+
+
+
+                </script>
+        </head>
+
+<form action = "/prompt">
+    enter the command: <input name='cmd' id='cmd' />
+    </form>
+    <button onclick = "loadDoc()"> run </button>
+    <div id = 'root' >
+            </div>
+   <div id ='div1' name ='div1' style = "border : 4px solid red ; height : 300px ; width : 40% "> division1</div>
+
